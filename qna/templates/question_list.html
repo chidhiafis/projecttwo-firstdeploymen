@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<p>these are the questions</p>
+<p>Welcome {{request.user.username}}</p>
+<p><a href="{% url 'new_question' %}">new question</a> </p>
+<div>
+    {% for question in questions %}
+        <div>
+            <h3>{{question.title}}</h3>
+            <p>{{question.body}}</p>
+            <a href="">
+            <span>@{{question.user}}</span></a>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

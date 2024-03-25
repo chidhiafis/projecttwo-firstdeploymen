@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+{% if form.errors %}
+    <p>your username and password do not match</p>
+{% else %}
+<P>use teh form to login</P>
+{% endif %}
+<form method="post" action="{% url 'login' %}">
+    {{form.as_p}}
+    {% csrf_token %}
+    <input type="submit" value="login ">
+</form>
+{% endblock %}
